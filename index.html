@@ -1,0 +1,337 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המערכת של אלעד עשור</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .description {
+            text-align: right;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: linear-gradient(135deg, #89ff00 0%, #00b4d8 100%);
+            color: white;
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>המערכת של אלעד עשור - מערכת ויזואליזציה רלוונטית לקבלת החלטות לגבי חנות הנרגילות שלי</h1>
+    </header>
+    <section class="description">
+        <h2>מטרות המערכת</h2>
+        <p>מערכת זו מספקת כלים ויזואליים מתקדמים לקבלת החלטות מבוססות נתונים בחנות הנרגילות. היא כוללת דוחות מנהלים, ניתוח חוויות שירות ודוחות למנהל החנות, המאפשרים שיפור ביצועים, זיהוי מגמות והגברת שביעות רצון הלקוחות.</p>
+    </section>
+    <section class="buttons">
+        <button onclick="window.location.href='dash1.html'">מערכת 1 - דוח מנהלים</button>
+        <button onclick="window.location.href='dash2.html'">מערכת 2 - דוח חוויות שירות</button>
+        <button onclick="window.location.href='dash3.html'">מערכת 3 - דוח למנהל החנות</button>
+    </section>
+    <script>
+        // Simple JS for button interaction feedback
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.style.opacity = '0.8';
+                setTimeout(() => { btn.style.opacity = '1'; }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!-- dash1.html -->
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת 1 - דוח מנהלים</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .description {
+            text-align: right;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff9d6c 0%, #bb4e75 100%);
+            color: white;
+            transition: transform 0.3s;
+        }
+        .back-button:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>מערכת 1 - דוח מנהלים</h1>
+    </header>
+    <section class="description">
+        <h2>תיאור המערכת</h2>
+        <p>דוח זה מספק סקירה כללית על ביצועי החנות, כולל מכירות, מלאי ומגמות שוק, כדי לסייע למנהלים בקבלת החלטות אסטרטגיות.</p>
+    </section>
+    <section id="tableau">
+        <h2>דשבורד ויזואלי</h2>
+        <p>צפו בדשבורד המנהלים להלן:</p>
+        <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+        <tableau-viz 
+            id="tableauViz"
+            src="https://public.tableau.com/views/finalworkfromeladasor_p1/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+            toolbar="bottom"
+            hide-tabs
+            width="100%"
+            height="800">
+        </tableau-viz>
+    </section>
+    <button class="back-button" onclick="window.location.href='index.html'">חזור לדף הבית</button>
+    <script>
+        // JS for back button feedback
+        document.querySelector('.back-button').addEventListener('click', () => {
+            this.style.opacity = '0.8';
+            setTimeout(() => { this.style.opacity = '1'; }, 200);
+        });
+    </script>
+</body>
+</html>
+
+<!-- dash2.html -->
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת 2 - דוח חוויות שירות</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .description {
+            text-align: right;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff9d6c 0%, #bb4e75 100%);
+            color: white;
+            transition: transform 0.3s;
+        }
+        .back-button:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>מערכת 2 - דוח חוויות שירות</h1>
+    </header>
+    <section class="description">
+        <h2>תיאור המערכת</h2>
+        <p>דוח זה מתמקד בניתוח משובי לקוחות, דירוגי שירות וחוויות כלליות, כדי לשפר את איכות השירות בחנות.</p>
+    </section>
+    <section id="tableau">
+        <h2>דשבורד ויזואלי</h2>
+        <p>צפו בדשבורד חוויות השירות להלן:</p>
+        <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+        <tableau-viz 
+            id="tableauViz"
+            src="https://public.tableau.com/views/finalworkfromeladasor_p2/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+            toolbar="bottom"
+            hide-tabs
+            width="100%"
+            height="800">
+        </tableau-viz>
+    </section>
+    <button class="back-button" onclick="window.location.href='index.html'">חזור לדף הבית</button>
+    <script>
+        // JS for back button feedback
+        document.querySelector('.back-button').addEventListener('click', () => {
+            this.style.opacity = '0.8';
+            setTimeout(() => { this.style.opacity = '1'; }, 200);
+        });
+    </script>
+</body>
+</html>
+
+<!-- dash3.html -->
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת 3 - דוח למנהל החנות</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .description {
+            text-align: right;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff9d6c 0%, #bb4e75 100%);
+            color: white;
+            transition: transform 0.3s;
+        }
+        .back-button:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>מערכת 3 - דוח למנהל החנות</h1>
+    </header>
+    <section class="description">
+        <h2>תיאור המערכת</h2>
+        <p>דוח זה כולל נתונים יומיומיים על פעילות החנות, כולל מכירות יומיות, ניהול עובדים ומלאי, עבור מנהל החנות.</p>
+    </section>
+    <section id="tableau">
+        <h2>דשבורד ויזואלי</h2>
+        <p>צפו בדשבורד למנהל החנות להלן:</p>
+        <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+        <tableau-viz 
+            id="tableauViz"
+            src="https://public.tableau.com/views/finalworkfromeladasor/Dashboard3?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+            toolbar="bottom"
+            hide-tabs
+            width="100%"
+            height="800">
+        </tableau-viz>
+    </section>
+    <button class="back-button" onclick="window.location.href='index.html'">חזור לדף הבית</button>
+    <script>
+        // JS for back button feedback
+        document.querySelector('.back-button').addEventListener('click', () => {
+            this.style.opacity = '0.8';
+            setTimeout(() => { this.style.opacity = '1'; }, 200);
+        });
+    </script>
+</body>
+</html>
